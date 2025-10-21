@@ -1,0 +1,107 @@
+{
+  // ===
+  // Spacing
+  // ===
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // ===
+  // Files
+  // ===
+  "files.exclude": {
+    "**/*.log": true,
+    "**/*.log*": true,
+    // "**/dist": true,
+    "**/coverage": true
+  },
+  "files.associations": {
+    ".markdownlintrc": "jsonc"
+  },
+  // ===
+  // Event Triggers
+  // ===
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "formattingToggle.affects": ["formatOnPaste", "formatOnSave", "formatOnType"],
+  "eslint.run": "onType",
+  "vetur.validation.template": true,
+  // ===
+  // JS(ON)
+  // ===
+  "jest.autoRun": {
+    "watch": false
+  },
+  "jest.enableCodeLens": false,
+  "eslint.validate": [
+    "vue",
+    "html",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "javascript.format.enable": true,
+  "json.format.enable": true,
+  "vetur.validation.script": true,
+  // ===
+  // CSS
+  // ===
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "vetur.validation.style": false,
+  // ===
+  // MARKDOWN
+  // ===
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80
+  },
+  "markdownlint.config": {
+    "line-length": false,
+    "first-header-h1": false,
+    "first-line-h1": false,
+    "no-inline-html": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "[scss]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false
+  },
+  "eslint.format.enable": true,
+  // ===
+  // STYLELINT
+  // ===
+  "stylelint.enable": true,
+  //UI Project VScode Color Scheme
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0B7591",
+    "activityBar.activeBorder": "#e7e7e7",
+    "activityBar.background": "#109dc2",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e7",
+    "activityBarBadge.background": "#e7e7e7",
+    "activityBarBadge.foreground": "#152B2B",
+    "statusBar.background": "#0B7591",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#074E60",
+    "titleBar.activeBackground": "#0B7591",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#074E6099",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "sash.hoverBorder": "#074E60",
+    "statusBarItem.remoteBackground": "#0B7591",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  }
+}

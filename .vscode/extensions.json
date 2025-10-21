@@ -1,0 +1,28 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-scss",
+    "orta.vscode-jest",
+    "davidanson.vscode-markdownlint",
+    "pkief.material-icon-theme",
+    "xabikos.javascriptsnippets",
+    "zignd.html-css-class-completion",
+    "abusaidm.html-snippets",
+    "formulahendry.auto-close-tag",
+    "stkb.rewrap",
+    "dzannotti.vscode-babel-coloring",
+    "equinusocio.vsc-material-theme",
+    "eg2.vscode-npm-script",
+    "sdras.vue-vscode-snippets",
+    "stylelint.vscode-stylelint",
+    "tombonnike.vscode-status-bar-format-toggle",
+    "pranaygp.vscode-css-peek",
+    "bradlc.vscode-tailwindcss",
+    "graphQL.vscode-graphql",
+    "eamodio.gitlens",
+    "Vue.volar"
+  ]
+}
