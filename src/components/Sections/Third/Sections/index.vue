@@ -7,9 +7,9 @@
       <img :src="imageText" class="h-4 md:h-6 object-contain mt-9" />
       <p
         class="font-lora text-white text-center w-[300px] md:w-[366px] my-5 px-4 text-general"
-      >
-        {{ data.text }}
-      </p>
+        v-html="data.text"
+      />
+
       <button
         @click="showCuenta"
         class="bg-brown px-7 py-2 rounded-3xl flex items-center mt-5 mb-4"
@@ -21,7 +21,11 @@
       </button>
 
       <Transition>
-        <span v-if="showTextAccount" class="text-white">Cuenta Bancaria</span>
+        <div v-if="showTextAccount" class="flex flex-col text-center">
+          <span class="text-white">ES26 0073 0100 5601 9960 7754 </span>
+          <span class="text-white">o</span>
+          <span class="text-white">Bizum al 692885365</span>
+        </div>
       </Transition>
     </div>
   </section>

@@ -11,7 +11,7 @@
       <img src="~images/fecha.png" class="w-96" alt="Date weeding" />
 
       <p class="my-5 font-lora text-brown tracking-[5px] font-medium leading-7">
-        A LAS 16:30
+        A LAS 18:45
       </p>
       <p
         class="font-lora text-lg text-brown w-[300px] md:w-[480px] text-center italic"
@@ -21,14 +21,26 @@
       </p>
     </div>
 
-    <div class="container md:flex justify-evenly pt-14">
-      <Sitios :data="sites[0]" />
-      <img
-        src="~images/flor.svg"
-        class="hidden md:block w-20 mt-10"
-        alt="heart"
-      />
-      <Sitios id="celebracion" :data="sites[1]" class="pt-6 md:pt-0" />
+    <div class="container flex flex-col pt-14">
+      <div class="md:flex justify-evenly">
+        <Sitios :data="sites[0]" />
+        <img
+          src="~images/flor.svg"
+          class="hidden md:block w-20 mt-10"
+          alt="heart"
+        />
+        <Sitios id="celebracion" :data="sites[1]" class="pt-6 md:pt-0" />
+      </div>
+      <div class="w-full flex justify-center">
+        <a
+          href="https://maps.app.goo.gl/QNo2fnWSdExMrZu46"
+          target="_blank"
+          class="bg-green px-7 py-2 rounded-3xl flex items-center mt-8 w-fit"
+        >
+          <Icon name="gis:map-route" size="1rem" class="text-white mr-2" />
+          <span class="text-white font-lora text-lg">Abrir en Google Maps</span>
+        </a>
+      </div>
     </div>
 
     <Calendar />
@@ -38,6 +50,7 @@
 import Sitios from "@/components/Sitios";
 import Calendar from "@/components/Calendar";
 import Celebracion from "images/celebracion.svg";
+import Cocktail from "images/cocktail.webp";
 
 import { useBreakpoints } from "@/composables/useBreakpoints";
 
@@ -45,20 +58,16 @@ const { isLg } = useBreakpoints();
 
 const sites = [
   {
-    type: "Ceremonia",
-    name: "Iglesia San Francisco de Asís",
-    address: "Av. San Francisco 1234, San Bernardo.",
+    type: "Celebración",
+    name: "Finca Guadalajara Green",
+    address: "Calle Puente de la Barca, Guadalajara",
     img: Celebracion,
-    mapLink:
-      "https://www.google.com/maps/place/Iglesia+San+Francisco+de+As%C3%ADs/@-33.6037617,-70.6995693,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c58e4f6f6f6f:0xabcdef1234567890!8m2!3d-33.6037617!4d-70.6973806!16s%2Fg%2F11c52y5y5y",
   },
   {
-    type: "Celebración",
-    name: "Hacienda Los Naranjos",
-    address: "Camino los Naranjos, Parcela 2E, San Bernardo.",
-    img: Celebracion,
-    mapLink:
-      "https://www.google.com/maps/place/Hacienda+Los+Naranjos/@-33.6123456,-70.6891234,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c58e4f6f6f6f:0x1234567890abcdef!8m2!3d-33.6123456!4d-70.6869347!16s%2Fg%2F11c52y5y5y",
+    type: "Cóctel de recepción",
+    name: "Tras la ceremonia",
+    address: "Os esperamos para un cóctel con bebidas y aperitivos",
+    img: Cocktail,
   },
 ];
 </script>

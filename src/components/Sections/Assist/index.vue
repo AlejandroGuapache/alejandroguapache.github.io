@@ -26,7 +26,7 @@
         nuestro matrimonio.
       </p>
     </div>
-    <Form v-slot="{ handleSubmit }" :validation-schema="schema">
+    <Form ref="formRef" v-slot="{ handleSubmit }" :validation-schema="schema">
       <form
         @submit="handleSubmit($event, onSubmit)"
         class="w-full md:w-[900px] flex flex-col items-center justify-center self-center justify-self-center px-6"
@@ -130,9 +130,14 @@
         <div class="w-full flex justify-center mt-4 mb-20">
           <button
             type="submit"
-            class="bg-green font-lora text-white py-2 px-6 rounded-lg"
+            class="bg-green font-lora text-white py-2 px-6 rounded-lg flex items-center"
           >
             Enviar
+            <Icon
+              v-if="loading"
+              name="svg-spinners:6-dots-scale-middle"
+              class="ml-2"
+            />
           </button>
         </div>
       </form>
@@ -146,6 +151,8 @@ import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import { useBreakpoints } from "@/composables/useBreakpoints";
 import * as yup from "yup";
 
+const formRef = ref(null);
+const loading = ref(false);
 const schema = yup.object({
   name: yup.string().required().min(3),
   email: yup.string().required().email(),
@@ -161,6 +168,7 @@ const schema = yup.object({
 
 const { isLg } = useBreakpoints();
 const onSubmit = (values) => {
+  loading.value = true;
   const datos = {
     fecha: new Date().toLocaleString(),
     name: values.name,
@@ -181,8 +189,14 @@ const onSubmit = (values) => {
     },
     body: JSON.stringify(datos),
   })
-    .then(() => alert("Datos enviados correctamente"))
-    .catch((error) => console.error("Error:", error));
+    .then(() => {
+      formRef.value.resetForm();
+      alert("Datos enviados correctamente \n¡Gracias por tomarte el tiempo!");
+    })
+    .catch((error) => console.error("Error:", error))
+    .finally(() => {
+      loading.value = false;
+    });
 };
 </script>
 

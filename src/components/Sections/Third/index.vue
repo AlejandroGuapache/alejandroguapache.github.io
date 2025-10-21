@@ -91,7 +91,7 @@
 </template>
 <script setup>
 import Sections from "./Sections";
-import programacion from "images/programacion.png";
+import programacion from "images/programacion.webp";
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import programacionMobile from "images/programacion-cel.webp";
 import { useBreakpoints } from "@/composables/useBreakpoints";
@@ -104,7 +104,7 @@ const programacionImg = computed(() =>
 
 const sectionData = [
   {
-    text: "Ellos traje formal deberán usar, ellas de vestido largo estarán... Y juntos puntualmente llegarán.",
+    text: "<p>Ellos traje formal deberán usar,</p> <p>ellas de vestido largo estarán... </p> Y juntos puntualmente llegarán. <p>Solo el blanco deberán evitar,</p> <p>para la novia reservar.</p>",
     button: {
       text: "Ver inspiraciones",
       icon: "streamline-pixel:beauty-beard-style", //entypo-social:pinterest-with-circle
@@ -113,9 +113,9 @@ const sectionData = [
     imageText: "dresscodeText",
   },
   {
-    text: "Sí queréis contribuir en nuestra luna de miel, os facilitamos el número de cuenta:",
+    text: "Tu presencia es nuestro mejor regalo, pero si quieres contribuir a nuestro viaje de ensueño, aquí tienes:",
     button: {
-      text: "Ver datos bancarios",
+      text: "Ver opciones",
       icon: "system-uicons:eye",
       iconField: "system-uicons:eye-closed",
     },
