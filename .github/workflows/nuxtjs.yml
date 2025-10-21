@@ -25,13 +25,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
 
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies with Yarn
+        run: yarn install --frozen-lockfile || yarn install
 
       - name: Build and generate static site
-        run: npm run generate
+        run: yarn generate
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
