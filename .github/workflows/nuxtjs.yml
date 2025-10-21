@@ -26,8 +26,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies with Yarn
-        run: yarn install --frozen-lockfile
+      - name: Clean and install dependencies
+        run: |
+          rm -f package-lock.json
+          yarn install --frozen-lockfile
 
       - name: Build and generate static site
         run: yarn generate
