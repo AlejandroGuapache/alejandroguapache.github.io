@@ -26,16 +26,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Force npm public registry and install
+      - name: Install dependencies
         run: |
           rm -f package-lock.json yarn.lock
-          rm -f ~/.npmrc ~/.yarnrc
-          npm config set registry https://registry.npmjs.org/ --location=global
-          npm config set @lottiefiles:registry https://registry.npmjs.org/ --location=global
-          npm config set @iconify:registry https://registry.npmjs.org/ --location=global
-          npm config set @nuxt:registry https://registry.npmjs.org/ --location=global
-          npm config set @nuxtjs:registry https://registry.npmjs.org/ --location=global
-          npm install --registry=https://registry.npmjs.org/ --no-audit --no-fund
+          npm install
 
       - name: Build and generate static site
         run: npm run generate
