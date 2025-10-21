@@ -37,6 +37,6 @@ const namesImage = computed(() => (isLg.value ? names : namesCel));
 
 <style scoped>
 .background-home {
-  @apply bg-cover object-contain  bg-center w-full h-[calc(100vh-7<0px)] relative;
+  @apply bg-cover object-contain  bg-center w-full h-[calc(100vh-70px)] relative;
 }
 </style>
