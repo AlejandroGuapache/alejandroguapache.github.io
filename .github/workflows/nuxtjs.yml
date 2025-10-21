@@ -26,12 +26,9 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-      - name: Configure npm auth
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Install dependencies
-        env:
-          npm_config_yes: true
-        run: npm install
+        run: npm install --no-audit --no-fund
 
       - name: Build and generate static site
         run: npm run generate
