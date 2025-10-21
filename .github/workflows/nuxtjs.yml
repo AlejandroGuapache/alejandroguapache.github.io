@@ -26,14 +26,8 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Install Yarn
-        run: npm install -g yarn
-
       - name: Install dependencies with Yarn
-        run: yarn install --frozen-lockfile || yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Build and generate static site
         run: yarn generate
