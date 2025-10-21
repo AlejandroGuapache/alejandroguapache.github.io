@@ -47,6 +47,12 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "nuxt-countdown",
+    [
+      "@vee-validate/nuxt",
+      {
+        autoImports: true,
+      },
+    ],
     "@nuxtjs/tailwindcss",
     [
       "@nuxtjs/google-fonts",

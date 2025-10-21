@@ -20,72 +20,123 @@
         alt="Confirmación boda"
       />
       <p
-        class="font-lora text-brown w-full md:w-[490px] text-lg text-center my-4 md:my-6"
+        class="font-lora text-brown w-full md:w-[490px] md:text-lg text-center my-4 md:my-6"
       >
         Por favor confirma tu asistencia máximo 30 días antes de la fecha de
         nuestro matrimonio.
       </p>
     </div>
-
-    <form
-      @submit.prevent="enviarDatos()"
-      class="w-full md:w-[900px] flex flex-col items-center justify-center self-center justify-self-center px-6"
-    >
-      <div class="grid grid-cols-12 w-full gap-4">
-        <input
-          class="w-full col-span-12 md:col-span-6 h-12"
-          id="name"
-          type="text"
-          placeholder="Nombre completo"
-        />
-        <input
-          class="w-full col-span-12 md:col-span-6 h-12"
-          id="email"
-          type="email"
-          placeholder="Correo electrónico"
-        />
-      </div>
-      <div class="w-full grid grid-cols-12 gap-4 my-4">
-        <input
-          class="w-full col-span-12 md:col-span-6 h-12"
-          id="tel"
-          type="tel"
-          placeholder="Teléfono"
-        />
-        <select
-          name="confirm"
-          class="w-full col-span-12 md:col-span-6 h-12 custom-triangle triangle-large"
-          placeholder="Confirmación"
-        >
-          <option value="" disabled selected>Confirma tu asistencia</option>
-          <option value="Sí voy">Si, ahí estaré 🙂</option>
-          <option value="No voy">No podré asistir, lo siento...</option>
-        </select>
-      </div>
-      <div class="w-full">
-        <textarea
-          class="w-full h-20 resize-none"
-          id="restricciones"
-          placeholder='¿Tienes restricciones de alimentos o alergias? Ejemplo: Vegano, vegetariano, celiaco, intolerante a la lactosa, etc. De lo contrario responder "sin restricción alimentaria"'
-        ></textarea>
-      </div>
-      <div class="w-full mt-3">
-        <textarea
-          class="w-full h-20 resize-none"
-          id="mensaje"
-          placeholder="Mensaje para los novios (opcional)"
-        ></textarea>
-      </div>
-      <div class="w-full flex justify-center mt-4 mb-20">
-        <button
-          type="submit"
-          class="bg-green font-lora text-white py-2 px-6 rounded-lg"
-        >
-          Enviar
-        </button>
-      </div>
-    </form>
-
+    <Form v-slot="{ handleSubmit }" :validation-schema="schema">
+      <form
+        @submit="handleSubmit($event, onSubmit)"
+        class="w-full md:w-[900px] flex flex-col items-center justify-center self-center justify-self-center px-6"
+      >
+        <div class="grid grid-cols-12 w-full gap-4">
+          <div class="w-full col-span-12 md:col-span-6 h-12">
+            <Field
+              v-slot="{ field, meta: { valid, validated } }"
+              name="name"
+              type="text"
+            >
+              <input
+                v-bind="field"
+                class="h-full w-full"
+                :class="{ 'border border-red': !valid && validated }"
+                placeholder="Nombre completo"
+              />
+            </Field>
+          </div>
+          <div class="w-full col-span-12 md:col-span-6 h-12">
+            <Field
+              v-slot="{ field, meta: { valid, validated } }"
+              name="email"
+              type="email"
+              class="w-full h-full"
+            >
+              <input
+                v-bind="field"
+                class="h-full w-full"
+                :class="{ 'border border-red': !valid && validated }"
+                placeholder="Correo electrónico"
+              />
+            </Field>
+          </div>
+        </div>
+        <div class="w-full grid grid-cols-12 gap-4 my-4">
+          <div class="w-full col-span-12 md:col-span-6 h-12">
+            <Field
+              v-slot="{ field, meta: { valid, validated } }"
+              class="w-full h-full"
+              name="tel"
+              type="tel"
+            >
+              <input
+                v-bind="field"
+                class="w-full h-full"
+                :class="{ 'border border-red': !valid && validated }"
+                placeholder="Teléfono"
+              />
+            </Field>
+          </div>
+          <div class="w-full col-span-12 md:col-span-6 h-12">
+            <Field
+              v-slot="{ field, meta: { valid, validated } }"
+              name="confirm"
+              class="w-full h-full custom-triangle triangle-large"
+              placeholder="Confirmación"
+            >
+              <select
+                v-bind="field"
+                class="h-full w-full"
+                :class="{ 'border border-red': !valid && validated }"
+                placeholder="Confirmación"
+              >
+                <option value="" disabled selected>
+                  Confirma tu asistencia
+                </option>
+                <option value="Ahí estaré">Si, ahí estaré 🙂</option>
+                <option value="No podré ir, lo siento">
+                  No podré asistir, lo siento...
+                </option>
+              </select>
+            </Field>
+          </div>
+        </div>
+        <div class="w-full h-36">
+          <Field
+            v-slot="{ field, meta: { valid, validated } }"
+            name="restricciones"
+            class="w-full h-full"
+          >
+            <textarea
+              v-bind="field"
+              :class="{ 'border border-red': !valid && validated }"
+              class="w-full h-full resize-none"
+              id="restricciones"
+              placeholder='¿Tienes restricciones de alimentos o alergias? Ejemplo: Vegano, vegetariano, celiaco, intolerante a la lactosa, etc. De lo contrario responder "sin restricción alimentaria"'
+            ></textarea>
+          </Field>
+        </div>
+        <div class="w-full mt-3">
+          <Field v-slot="{ field }" name="mensaje" class="w-full h-full">
+            <textarea
+              v-bind="field"
+              class="w-full h-20 resize-none"
+              id="mensaje"
+              placeholder="Mensaje para los novios (opcional)"
+            ></textarea>
+          </Field>
+        </div>
+        <div class="w-full flex justify-center mt-4 mb-20">
+          <button
+            type="submit"
+            class="bg-green font-lora text-white py-2 px-6 rounded-lg"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </Form>
     <Dudas />
   </div>
 </template>
@@ -93,16 +144,31 @@
 import Dudas from "@/components/Sections/Dudas";
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import { useBreakpoints } from "@/composables/useBreakpoints";
+import * as yup from "yup";
+
+const schema = yup.object({
+  name: yup.string().required().min(3),
+  email: yup.string().required().email(),
+  tel: yup
+    .number()
+    .transform((val) => Number(val))
+    .required()
+    .min(9),
+  confirm: yup.string().required().notOneOf([""], "Selecciona un país válido"),
+  restricciones: yup.string().required(),
+  mensaje: yup.string(),
+});
 
 const { isLg } = useBreakpoints();
-
-const enviarDatos = () => {
-  console.log("entra");
+const onSubmit = (values) => {
   const datos = {
-    fecha: new Date().toLocaleDateString(),
-    nombre: "test",
-    email: "test",
-    mensaje: "test",
+    fecha: new Date().toLocaleString(),
+    name: values.name,
+    email: values.email,
+    tel: values.tel,
+    confirm: values.confirm,
+    restricciones: values.restricciones,
+    mensaje: values.mensaje ?? "",
   };
 
   const url =
@@ -160,5 +226,25 @@ select:valid {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%236d6e3c' d='M10 14L4 8h12l-6 6z'/%3E%3C/svg%3E");
   background-size: 18px;
   background-repeat: no-repeat;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #f8f1e9 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #f8f1e9 inset !important;
+    -webkit-text-fill-color: #6d6e3c !important;
+  }
 }
 </style>

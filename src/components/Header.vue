@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mb-12 md:mb-24">
+  <div class="w-full mb-12 md:mb-0">
     <header
       class="w-full h-[4.375rem] md:h-[90px] bg-white shadow-md fixed top-0 left-0 z-50"
     >
@@ -66,7 +66,6 @@ const toggleMenu = () => {
 };
 
 const scrollToSection = (id, offset = isMd.value ? 150 : 50) => {
-  console.log(" isMd.value", isMd.value);
   const element = document.getElementById(id);
   if (element) {
     const y = element.offsetTop - offset;

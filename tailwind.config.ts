@@ -20,6 +20,7 @@ export default <Partial<Config>>{
       brown: {
         DEFAULT: "#a58a46",
       },
+      red: { DEFAULT: "#c23934" },
       white: { DEFAULT: "#ffffff" },
       green: { DEFAULT: "#6D6E3C" },
       orange: { DEFAULT: "#F8F1E9" },
