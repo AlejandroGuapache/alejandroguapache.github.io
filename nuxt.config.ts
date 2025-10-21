@@ -2,6 +2,8 @@ import { fileURLToPath } from "node:url";
 
 export default defineNuxtConfig({
   app: {
+    baseURL: "/web-boda/", // Importante: con las barras
+    buildAssetsDir: "assets",
     head: {
       htmlAttrs: {
         lang: "es",
@@ -58,4 +60,5 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  ssr: false,
 });
