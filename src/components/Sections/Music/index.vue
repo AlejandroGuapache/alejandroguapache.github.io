@@ -8,7 +8,7 @@
       :layout="{
         fit: 'fit-width',
       }"
-      class="h-32 md:h-auto mt-8 md:mt-16"
+      class="h-auto mt-8 md:mt-16"
       src="https://lottie.host/48ed0d5a-1e05-4682-8dde-ade0dcb3e946/g9hBEhXEkL.lottie"
     />
     <img

@@ -26,10 +26,13 @@
       </button>
 
       <Transition>
-        <div v-if="showTextAccount" class="flex flex-col text-center">
-          <span class="text-white">ES26 0073 0100 5601 9960 7754 </span>
-          <span class="text-white">o</span>
-          <span class="text-white">Bizum al 692885365</span>
+        <div
+          v-if="showTextAccount"
+          class="flex flex-col text-center text-white"
+        >
+          <span>ES26 0073 0100 5601 9960 7754 </span>
+          <span>o</span>
+          <span>Bizum al 692885365</span>
         </div>
       </Transition>
     </div>
