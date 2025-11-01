@@ -21,21 +21,21 @@
           class="h-40 md:h-48 mt-2 md:mt-10"
           alt="About us"
         />
-
-        <p
-          class="mt-5 font-lora text-brown text-center md:text-left md:text-lg"
-        >
-          Nos conocimos en el instituto y desde entonces hemos compartido
-          innumerables momentos juntos.
-        </p>
-        <p
-          class="mt-5 font-lora text-brown text-center md:text-left md:text-lg"
-        >
-          A lo largo de nuestra relación, hemos aprendido a apoyarnos
-          mutuamente, a respetar nuestras diferencias y a celebrar nuestras
-          similitudes. Nos complementamos en muchos aspectos y estamos
-          emocionados de comenzar esta nueva etapa como pareja casada.
-        </p>
+        <div class="font-lora text-brown text-center md:text-left md:text-lg">
+          <p class="mt-5">
+            Nos conocimos en el instituto y desde entonces hemos compartido
+            innumerables momentos juntos.
+          </p>
+          <p class="my-5">
+            A lo largo de nuestra relación, hemos aprendido a apoyarnos
+            mutuamente, a respetar nuestras diferencias y a celebrar nuestras
+            similitudes.
+          </p>
+          <p>
+            Nos complementamos en muchos aspectos y estamos emocionados de
+            comenzar esta nueva etapa como pareja casada.
+          </p>
+        </div>
       </div>
     </div>
   </div>

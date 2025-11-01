@@ -19,8 +19,8 @@
     <p
       class="font-lora text-white text-general text-center w-[300px] md:w-[500px] my-8"
     >
-      ¡Motívate y añade esas canciones imprescindibles a nuestra playlist! ¡Es
-      hora de bailar!
+      ¡Motívate y añade esas canciones imprescindibles a nuestra playlist!<br />
+      ¡Es hora de bailar!
     </p>
 
     <a

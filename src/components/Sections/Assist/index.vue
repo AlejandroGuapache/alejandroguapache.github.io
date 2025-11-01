@@ -23,10 +23,8 @@
         class="w-full md:w-[620px] font-lora text-brown md:text-lg text-center"
       >
         <p class="mt-2">
-          Queridos amigos y familia: mientras nosotros cortamos la tarta,
-        </p>
-        <p>
-          ¡os animamos a que vosotros también os toméis una noche de diversión!
+          Queridos amigos y familia: mientras nosotros cortamos la tarta, ¡os
+          animamos a que vosotros también os toméis una noche de diversión!
         </p>
         <p>Por ello, nuestra boda será una celebración SOLO PARA ADULTOS.</p>
         <p class="mt-2 mb-6">

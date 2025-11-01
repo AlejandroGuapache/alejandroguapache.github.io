@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="w-[326px] md:w-[426px] h-[428px] md:h-[528px] bg-green rounded-t-[200px] flex flex-col items-center justify-center"
+      class="w-[326px] md:w-[426px] h-[490px] md:h-[528px] bg-green rounded-t-[200px] flex flex-col items-center justify-center"
     >
       <img :src="image" class="h-28 md:h-40 object-contain" />
       <img :src="imageText" class="h-4 md:h-6 object-contain mt-9" />
