@@ -11,13 +11,18 @@
       />
 
       <button
+        v-if="data.button?.text"
         @click="showCuenta"
         class="bg-brown px-7 py-2 rounded-3xl flex items-center mt-5 mb-4"
       >
         <span class="text-white font-lora text-lg">
           {{ data.button.text }}
         </span>
-        <Icon :name="data.button.icon" size="1.3rem" class="text-white ml-2" />
+        <Icon
+          :name="showTextAccount ? data.button.iconField : data.button.icon"
+          size="1.3rem"
+          class="text-white ml-2"
+        />
       </button>
 
       <Transition>

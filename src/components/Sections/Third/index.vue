@@ -105,10 +105,6 @@ const programacionImg = computed(() =>
 const sectionData = [
   {
     text: "<p>Ellos traje formal deberán usar,</p> <p>ellas de vestido largo estarán... </p> Y juntos puntualmente llegarán. <p>Solo el blanco deberán evitar,</p> <p>para la novia reservar.</p>",
-    button: {
-      text: "Ver inspiraciones",
-      icon: "streamline-pixel:beauty-beard-style", //entypo-social:pinterest-with-circle
-    },
     image: "dresscode",
     imageText: "dresscodeText",
   },

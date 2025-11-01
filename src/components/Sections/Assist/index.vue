@@ -19,12 +19,21 @@
         class="h-16 md:h-20 object-contain"
         alt="Confirmación boda"
       />
-      <p
-        class="font-lora text-brown w-full md:w-[490px] md:text-lg text-center my-4 md:my-6"
+      <div
+        class="w-full md:w-[620px] font-lora text-brown md:text-lg text-center"
       >
-        Por favor confirma tu asistencia máximo 30 días antes de la fecha de
-        nuestro matrimonio.
-      </p>
+        <p class="mt-2">
+          Queridos amigos y familia: mientras nosotros cortamos la tarta,
+        </p>
+        <p>
+          ¡os animamos a que vosotros también os toméis una noche de diversión!
+        </p>
+        <p>Por ello, nuestra boda será una celebración SOLO PARA ADULTOS.</p>
+        <p class="mt-2 mb-6">
+          Por favor confirma tu asistencia máximo 30 días antes de la fecha de
+          nuestro matrimonio.
+        </p>
+      </div>
     </div>
     <Form ref="formRef" v-slot="{ handleSubmit }" :validation-schema="schema">
       <form
