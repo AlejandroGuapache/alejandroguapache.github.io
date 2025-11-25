@@ -29,7 +29,8 @@
         <p>Por ello, nuestra boda será una celebración SOLO PARA ADULTOS.</p>
         <p class="mt-2 mb-6">
           Por favor confirma tu asistencia máximo 30 días antes de la fecha de
-          nuestro matrimonio.
+          nuestro matrimonio. En caso de cualquier cambio, por favor comunícalo
+          lo antes posible.
         </p>
       </div>
     </div>
