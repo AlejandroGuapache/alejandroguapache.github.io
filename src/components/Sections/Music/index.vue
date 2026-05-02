@@ -25,7 +25,7 @@
 
     <a
       class="bg-brown px-7 py-2 rounded-3xl flex items-center mt-5 mb-4"
-      href="https://open.spotify.com/playlist/50PTAWep6JlFFaZgZC3T8k?si=-ya2GsIhSEyVt-_s_V2xZg&pi=5jzzhqlcQW-S8"
+      href="https://open.spotify.com/playlist/50PTAWep6JlFFaZgZC3T8k?si=ja9w8VMNQ6i34ZAcx55vfw&pi=VUiW_bnqQuqbk&pt=b3937e4c65da85aac45e18e93e616a81"
       target="_blank"
     >
       <span class="text-white font-lora text-lg"> Agregar canciones </span>
