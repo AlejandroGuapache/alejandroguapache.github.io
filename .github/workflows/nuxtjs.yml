@@ -24,10 +24,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          rm -f package-lock.json yarn.lock
+          npm install
 
       - name: Build and generate static site
         run: npm run generate
