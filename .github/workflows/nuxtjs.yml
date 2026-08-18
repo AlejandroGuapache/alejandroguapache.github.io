@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          rm -f package-lock.json yarn.lock
+          rm -f package-lock.json
           npm install
 
       - name: Build and generate static site
