@@ -11,7 +11,7 @@
       <img src="~images/fecha.png" class="w-96" alt="Date weeding" />
 
       <p class="my-5 font-lora text-brown tracking-[5px] font-medium leading-7">
-        A LAS 18:45
+        A LAS 19:30
       </p>
       <p
         class="font-lora text-lg text-brown w-[300px] md:w-[480px] text-center italic"
