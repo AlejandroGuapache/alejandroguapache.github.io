@@ -1,6 +1,6 @@
 <template>
   <Countdown
-    :date="new Date('Sept 05, 2026 18:00:00')"
+    :date="new Date('Sept 05, 2026 19:30:00')"
     v-slot="{ days, hours, minutes, seconds }"
   >
     <div class="flex flex-wrap md:flex-nowrap justify-center gap-4">
